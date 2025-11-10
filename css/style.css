@@ -388,7 +388,7 @@
 .sm-top-seminarios h1 {
     font-size: 1.25rem;
     font-weight: 300;
-    color: var(--st-dark-hex);
+    color: var(--st-yellow-900-hex);
     text-transform: uppercase;
     margin-bottom: 0;
 }
@@ -704,11 +704,309 @@
  
 
 .sm-preview-contacto{
+    width: 900px;
+    height: 640px;
+    position: relative;
+    z-index: 1;
+}
+
+.sm-preview-contacto::before{
+    content: '';
     width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(var(--st-blue-900-rgb), .6);
+    z-index: 0;
 }
 
 .sm-preview-contacto img {
-    width: 720px;
-    height: 900px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.sm-preview-contacto span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.sm-preview-contacto span::before, 
+.sm-preview-contacto span::after {
+    position: absolute;
+    content: '';
+    width: 144px;
+    height: 144px;
+    background-color: rgba(var(--st-white-rgb), .15);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.sm-preview-contacto span::after{
+    transform: translate(50%, -50%);
+}
+
+.sm-form-container {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.sm-header-contacto{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sm-header-contacto .st-icono {
+    width: 104px;
+    height: 104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--st-yellow-900-hex);
+    color: var(--st-white-hex);
+    position: relative;
+    font-size: 1.5rem;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+.sm-header-contacto .st-icono::before{
+    content: '';
+    width: calc(100% - .5rem);
+    height: calc(100% - .5rem);
+    position: absolute;
+    right: -.5rem;
+    bottom: -.5rem;
+    background-color: rgba(var(--st-dark-rgb), .15);
+    z-index: -1;
+}
+
+.sm-header-contacto h1 {
+    color: var(--st-yellow-900-hex);
+}
+
+.st-form-contacto {
+    width: 480px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    border-top: 1px rgba(var(--st-dark-rgb), .2) solid;
+    margin-top: 1rem;
+}
+
+.st-form-group{
+    width: 100%;
+    position: relative;
+}
+
+.st-form-label{
+    font-family: var(--st-font-site);
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 300;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: .25rem;
+} 
+
+.st-input-group {
+    position: relative;
+}
+
+.st-input-app {
+    width: 100%;
+    height: 40px;
+    border: 1px rgba(var(--st-dark-rgb), .3) solid;
+    padding: 4px 8px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    font-family: var(--st-font-site);
+    outline: 0;
+    transition: all .3s ease;
+}
+
+textarea.st-input-app{
+    height: auto;
+    resize: none;
+}
+
+.st-input-app:focus{
+    border-color: var(--st-yellow-900-hex);
+    box-shadow: 0 0 0 3px rgba(var(--st-yellow-900-rgb), .3);
+}
+
+.st-button-app {
+    background-color: var(--st-yellow-900-hex);
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 48px;
+    color: var(--st-white-hex);
+    font-family: var(--st-font-site);
+    font-size: 1.1rem;
+    font-weight: 400;
+    cursor: pointer;
+    outline: 0;
+    transition: all .3s ease;
+    user-select: none;
+    border: 0;
+    width: 200px;
+}
+
+.st-button-app:hover,
+.st-button-app:focus{
+    box-shadow: 0 0 0 3px rgba(var(--st-yellow-900-rgb), .3);
+}
+
+
+/**
+ * ----------------------------------------
+ * FOOTER
+ * ----------------------------------------
+ */
+ .sm-footer-site {
+    width: 100%;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column; 
+    position: relative;
+    z-index: 1;
+    padding: 4rem;
+    justify-content: center;
+}
+
+.sm-footer-site::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(var(--st-blue-900-rgb), .9),rgba(var(--st-blue-900-rgb), .9)),url('../res/01.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.sm-brand-footer{
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.sm-brand-footer .st-icono {
+    width: 104px;
+    height: 104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--st-yellow-400-hex);
+    position: relative;
+    z-index: 0;
+}
+
+.sm-brand-footer .st-icono::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background-color: rgba(var(--st-white-rgb), .15);
+}
+
+.sm-brand-footer .st-brand-name{
+    width: 0;
+    flex: 1;
+}
+
+.sm-brand-footer .st-brand-name h1 {
+    color: var(--st-white-hex);
+    margin-bottom: 0;
+    font-size: 1.5rem;
+}
+
+
+.sm-footer-social {
+    gap: .5rem;
+    margin-top: 3rem;
+}
+
+.sm-footer-social .nav-link {
+    color: var(--st-white-hex);
+    border: 1px rgba(var(--st-yellow-400-rgb), 1) solid;
+    padding: 0;
+    margin: 0;
+}
+
+.sm-footer-social .nav-link .st-icono {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.st-footer-links {
+    flex-direction: column;
+    width: 100%;
+}
+
+.st-footer-links .nav-link {
+    color: var(--st-white-hex);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+
+.st-footer-copyright{
+    margin-top: 48px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--st-white-hex);
+    gap: 1rem;
+    font-size: 1.1rem;
+    font-weight: 300;
+    background-color: rgba(var(--st-white-rgb), .0375);
+    height: 56px;
+    padding: 0 1.5rem;
+    border-radius: 8px;
+}
+
+.st-footer-presentation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.st-footer-presentation h1 {
+    color: var(--st-yellow-400-hex);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.st-footer-presentation p {
+    margin-top: 1rem;
+    color: var(--st-white-hex);
+    font-size: 1.1rem;
+    font-weight: 300;
 }
