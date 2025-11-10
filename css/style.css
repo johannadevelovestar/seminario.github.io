@@ -119,7 +119,7 @@
     min-height: 400px;
     display: flex;
     align-items: center;
-    gap: 7rem;
+    gap: 3rem;
 }
 
 .sm-seminarios-header .st-icono {
@@ -149,8 +149,8 @@
 
 .sm-seminarios-header h1 {
     color: var(--st-yellow-900-hex);
-    font-size: 2.5rem;
-    font-weight: 500;
+    font-size: 5rem;
+    font-weight: 300;
 }
 
 .sm-seminarios-header p {
@@ -456,6 +456,24 @@
     font-size: 1.1rem;
 }
 
+.sm-card-link {
+    color: var(--st-dark-hex);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+.sm-card-link i {
+    color: var(--st-yellow-900-hex);
+}
+
+.sm-card-link:hover{
+    color: var(--st-dark-hex);
+}
+
 .sm-lista-moderadores {
     margin-bottom: 2rem;
 }
@@ -471,6 +489,15 @@
 .sm-card-text p {
     font-size: 1.1rem;
     font-weight: 300;
+}
+
+.sm-team-container{
+    width: 100%;
+    min-height: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .sm-teams-title {
@@ -590,6 +617,7 @@
 
 .sm-galeria-seminarios{
     margin-top: 144px;
+    --st-size-picture: 400px;
 }
 
 .sm-galeria-header{
@@ -663,7 +691,7 @@
 .sm-lista-galeria {
     gap: 1.5rem;
     margin: 80px 0;
-    --st-size-picture: 248px;
+    justify-content: center;
 }
 
 .sm-lista-galeria .nav-item {
@@ -686,7 +714,7 @@
     display: block;
     width: 100%;
     color: var(--st-dark-hex);
-    font-size: 11px;
+    font-size: 16px;
     font-weight: 400;
     text-align: end;
 }
@@ -985,10 +1013,9 @@ textarea.st-input-app{
     gap: 1rem;
     font-size: 1.1rem;
     font-weight: 300;
-    background-color: rgba(var(--st-white-rgb), .0375);
     height: 56px;
     padding: 0 1.5rem;
-    border-radius: 8px;
+    border-top: 1px rgba(var(--st-white-rgb), .3) solid;
 }
 
 .st-footer-presentation {
