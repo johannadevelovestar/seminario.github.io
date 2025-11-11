@@ -324,7 +324,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--st-light-hex);
+    background-color: transparent;
     color: var(--st-yellow-900-hex);
     box-shadow: 0 0 0 1px rgba(var(--st-dark-rgb), .2);
 }
@@ -1509,4 +1509,10 @@ textarea.st-input-app{
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+@media (max-width: 575.98px){
+    .sm-lightbox-container {
+        height: 600px;
+    }
 }
