@@ -8,6 +8,19 @@ const SitioInicioSeminarios = {
     html: {
         topbar: ()=>{
             const TopbarSiteApp = document.getElementById("TopbarSiteApp");
+            const TopbarLinks = TopbarSiteApp.querySelector('.sm-topbar-links');
+
+            const toggleLinks = TopbarSiteApp.querySelector('.sm-toggle-links');
+            toggleLinks.addEventListener("click", ()=>{
+                TopbarLinks.classList.toggle("st-active");
+            });
+
+            const rrLinks = TopbarLinks.querySelectorAll(".nav-link");
+            rrLinks.forEach(link=>{
+                link.addEventListener("click", ()=>{
+                    TopbarLinks.classList.remove("st-active");
+                });
+            });
 
             const scrooll = () => {
                 const scrollY = document.documentElement.scrollTop;

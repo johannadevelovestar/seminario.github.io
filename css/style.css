@@ -24,21 +24,38 @@
     
     --st-margin-site: 128px;
     --st-font-site: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+    
+    --st-icon-xxs: 0.5rem; 
+    --st-icon-xs: 0.625rem;
+    --st-icon-sm: 0.75rem; 
+    --st-icon-md: 1rem;    
+    --st-icon-lg: 1.5rem;  
+    --st-icon-xl: 2rem;    
+    --st-icon-xxl: 3rem;   
+} 
+
+@media (max-width: 1199.98px) {
+    :root {
+        --st-margin-site: 64px;
+    }
 }
 
-/**
- * ----------------------------------------
- * GENERAL STYLES  
- * ----------------------------------------
- */
-:root{
-  --st-icon-xxs: 0.5rem; 
-  --st-icon-xs: 0.625rem;
-  --st-icon-sm: 0.75rem; 
-  --st-icon-md: 1rem;    
-  --st-icon-lg: 1.5rem;  
-  --st-icon-xl: 2rem;    
-  --st-icon-xxl: 3rem;   
+@media (max-width: 991.98px) {
+    :root {
+        --st-margin-site: 56px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    :root {
+        --st-margin-site: 32px;
+    }
+}
+
+@media (max-width: 567.98px) {
+    :root {
+        --st-margin-site: 16px;
+    }
 }
 
 .st-icono {
@@ -163,6 +180,44 @@
     width: 900px;
 }
 
+@media (max-width: 1199.98px) {
+    .st-flex-site {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 991.98px){
+    .sm-header-column{
+        width: 100%;
+        text-align: center;
+    }
+}
+ 
+@media (max-width: 767.98px) {
+    .sm-seminarios-header {
+        flex-direction: column;
+        gap: 1rem; 
+        justify-content: center!important;
+    }
+    
+    .sm-seminarios-header h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 567.98px) {
+    
+    .sm-seminarios-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .sm-seminarios-header p {
+        font-size: 1rem;
+    }
+    
+}
+
+
 /**
  * ----------------------------------------
  * TOPBAR SITE 
@@ -259,6 +314,55 @@
     color: var(--st-dark-hex);
 }
 
+.sm-toggle-links {
+    width: 48px;
+    height: 48px;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--st-light-hex);
+    color: var(--st-yellow-900-hex);
+    box-shadow: 0 0 0 1px rgba(var(--st-dark-rgb), .2);
+}
+
+@media (min-width: 992px){
+    .sm-toggle-links{
+        display: none!important;
+    }
+}
+
+@media (max-width: 991.98px){
+
+    .sm-topbar-links:not(.st-active){
+        display: none;
+    } 
+    
+    .sm-topbar-links.st-active{
+        width: 100%;
+        height: calc(100vh - var(--sm-height-topbar));
+        position: fixed;
+        top: var(--sm-height-topbar);
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        background-color:  var(--st-light-hex);
+        justify-content: center;
+        align-items: center;
+        z-index: 4020;
+    } 
+
+}
+
+@media (max-width: 767.98px) {
+
+    
+
+}
+
 /**
  * ----------------------------------------
  * INICIO SECTION
@@ -305,7 +409,6 @@
     left: 0;
     z-index: -1;
 }
-
 
 .sm-presentation-slide{
     position: absolute;
@@ -367,6 +470,160 @@
     transform: translate(28px, -28px);
 }
 
+@media (max-width: 991.98px) {
+ 
+    .sm-presentation-container {
+        width: 100%;
+        padding: 2rem;
+    }
+
+}
+
+@media (max-width: 767.98px) {
+ 
+    .sm-presentation-slide p{
+        font-size: 1.5rem;
+    }
+
+    .sm-presentation-container{
+        padding: 1.5rem;
+    }
+
+}
+
+@media (max-width: 575.98px) {
+
+    .sm-presentation-container{
+        padding: 1rem;
+    }
+
+    .sm-presentation-slide h1 {
+        font-size: 1.5rem;
+    }
+         
+ 
+    .sm-presentation-slide p{
+        font-size: 1.25rem;
+        display: block;
+    }
+
+}
+
+/**
+ * ----------------------------------------
+ * NOSOTROS
+ * ----------------------------------------
+ */
+.sm-nosotros-section{
+    width: 100%;
+    min-height: 480px;
+    position: relative;
+}
+ 
+.sm-mvv-items,
+.sm-mvv-items li {
+    width: 100%;
+}
+
+.sm-mvv-card {
+    width: 100%;
+    margin-bottom: 6rem;
+    display: flex; 
+    gap: 3rem;
+}
+
+.st-icono.sm-mvv{
+    --st-size: 128px;
+    width: var(--st-size);
+    height: var(--st-size);
+    background-color: rgba(var(--st-yellow-900-rgb), .0425);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: var(--st-yellow-900-hex);
+    position: relative;
+    z-index: 0;
+}
+
+.st-icono.sm-mvv::before,
+.st-icono.sm-mvv::after {
+    content: '';
+    width: 56px;
+    height: 56px;
+    background-color: rgba(var(--st-yellow-900-rgb), .0725);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.st-icono.sm-mvv::after {
+    transform: translate(50%, -50%);
+}
+
+.sm-mvv-title{
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--st-yellow-900-hex);
+    position: relative;
+    z-index: 0;
+    margin-bottom: 1.5rem;
+}
+
+.sm-mvv-body {
+    width: 0;
+    flex: 1;
+    border-left: 1px rgba(var(--st-dark-rgb), .3) solid;
+    padding: 0 1.5rem;
+}
+
+.sm-mvv-body p {
+    margin-bottom: 0.25rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+@media (max-width: 991.98px){
+
+    .sm-mvv-card{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .sm-mvv-body {
+        width: 100%;
+        flex: unset;
+        border: 0;
+        border-top: 1px rgba(var(--st-dark-rgb), .3) solid;
+        padding-top: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px){
+
+    .sm-nosotros-section .sm-seminarios-header {
+        flex-direction: column-reverse;
+    }
+   
+    .sm-mvv-title{
+        font-size: 2.5rem;
+    }
+
+
+}
+@media (max-width: 575.98px){
+
+    
+    .sm-mvv-title{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+
+}
+
 /**
  * ----------------------------------------
  * SEMINARIOS SECTION
@@ -421,6 +678,7 @@
 .sm-lista-seminarios {
     width: 100%;
     margin: 80px 0;
+    gap: 4rem;
 }
 
 .sm-lista-seminarios li {
@@ -433,8 +691,8 @@
 }
 
 .sm-seminario-preview{
-    width: 900px;
-    height: 640px;
+    width: 720px;
+    height: 600px;
 }
 
 .sm-seminario-preview img {
@@ -451,9 +709,19 @@
     padding: 2rem;
 }
 
+.sm-conferencia-title {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--st-yellow-900-hex);
+}
+
 .sm-card-header > h1 {
     color: var(--st-yellow-900-hex);
-    font-size: 1.1rem;
+    font-size: .9rem;
+    color: rgba(var(--st-dark-rgb), .6);
+    margin-bottom: 0;
 }
 
 .sm-card-link {
@@ -609,6 +877,54 @@
     background-color: rgba(var(--st-yellow-900-rgb), .05);
 } 
 
+@media (max-width: 1919.98px){
+    
+    .sm-seminario-preview {
+        width: 560px;
+        height: 480px;
+    }
+}
+
+@media (max-width: 1199.98px){
+    .sm-seminario-card {
+        flex-direction: column;
+    }
+    .sm-seminario-preview {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .sm-seminario-body {
+        width: 100%;
+        flex: unset;
+    }
+    
+    .sm-conferencia-title{
+        font-size: 2rem;
+    }
+    
+    .sm-lista-moderadores h2{
+        font-size: 2rem;
+    }
+     
+}
+
+@media (max-width: 767.98px){
+    .sm-top-seminarios{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px){
+    .sm-conferencia-title{
+        font-size: 1.5rem;
+    }
+}
+
+
 /**
  * ----------------------------------------
  * GALERIA
@@ -717,6 +1033,53 @@
     font-size: 16px;
     font-weight: 400;
     text-align: end;
+}
+
+@media (max-width: 1199.98px){
+    .sm-galeria-seminarios {
+        --st-size-picture: 300px;
+    }     
+}
+
+@media (max-width: 991.98px){
+    .sm-galeria-seminarios {
+        --st-size-picture:248px;
+    }     
+}
+
+@media (max-width: 767.98px){
+
+    .sm-galeria-seminarios {
+        --st-size-picture: 192px;
+    }
+
+    .sm-galeria-header h1 {
+        color: var(--st-yellow-400-hex);
+        font-size: 3rem;
+    }
+
+    .sm-galeria-header p {
+        color: var(--st-white-hex);
+        font-size: 2.5rem;
+        font-weight: 400;
+    }
+        
+}
+
+@media (max-width: 567.98px){
+
+    .sm-galeria-seminarios {
+        --st-size-picture: 128px;
+    }
+
+    .sm-galeria-header h1 { 
+        font-size: 2rem;
+    }
+
+    .sm-galeria-header p {
+        font-size: 1rem;
+    }
+        
 }
 
 /**
@@ -902,6 +1265,43 @@ textarea.st-input-app{
     box-shadow: 0 0 0 3px rgba(var(--st-yellow-900-rgb), .3);
 }
 
+@media (max-width: 1919.98px){
+    .sm-preview-contacto {
+            width: 100%;
+            height: 480px;
+        }
+}
+
+@media (max-width: 1198.98px){
+    .sm-preview-contacto{
+        width: 100%;
+        height: 480px;
+    }
+    
+    .st-form-contacto{
+        width: 100%;
+    }
+
+          .sm-header-contacto {
+              margin-top: 1.5rem;
+          }
+}
+
+@media (max-width: 575.98px){
+    .sm-form-container{
+        padding: 0;
+    }
+    
+    .sm-header-contacto {
+        margin-top: 3rem;
+    }
+    
+    .st-form-contacto{
+        padding: 2rem 0;
+    }
+}
+
+
 
 /**
  * ----------------------------------------
@@ -995,6 +1395,7 @@ textarea.st-input-app{
 .st-footer-links {
     flex-direction: column;
     width: 100%;
+    padding: 0 3rem;
 }
 
 .st-footer-links .nav-link {
@@ -1036,4 +1437,28 @@ textarea.st-input-app{
     color: var(--st-white-hex);
     font-size: 1.1rem;
     font-weight: 300;
+}
+
+@media (max-width: 1919.98px) {
+    .sm-footer-site{
+        padding: 88px 0; 
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .st-footer-links {
+        padding: 3rem 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .sm-brand-footer{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .sm-brand-footer .st-brand-name {
+        width: 100%;
+    }
 }
