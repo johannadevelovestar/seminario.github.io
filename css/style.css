@@ -357,12 +357,7 @@
 
 }
 
-@media (max-width: 767.98px) {
-
-    
-
-}
-
+ 
 /**
  * ----------------------------------------
  * INICIO SECTION
@@ -1461,4 +1456,57 @@ textarea.st-input-app{
     .sm-brand-footer .st-brand-name {
         width: 100%;
     }
+}
+
+
+.sm-lightbox-app {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5020;
+    inset: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sm-backdrop-lightbox {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(var(--st-black-rgb), .8);
+}
+
+.sm-close-lightbox {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    border: 0;
+    outline: 0;
+    background-color: rgba(var(--st-light-rgb), .1);
+    color: var(--st-light-hex);
+    cursor: pointer;
+}
+
+.sm-lightbox-container {
+    width: 100%;
+    position: relative;
+    height: 720px;
+    z-index: 1;
+    text-align: center;
+    background-color: var(--st-black-hex);
+}
+
+.sm-lightbox-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }

@@ -3,6 +3,7 @@ const SitioInicioSeminarios = {
 
         SitioInicioSeminarios.html.topbar();
         SitioInicioSeminarios.html.sections.inicio();
+        SitioInicioSeminarios.html.galeria();
 
     }, 
     html: {
@@ -48,6 +49,48 @@ const SitioInicioSeminarios = {
                     gap: 0
                 }).mount();
             }
+        }, 
+        galeria: ()=> {
+            
+            const lightbox = (img)=>{
+
+                const rrLightbox = document.querySelectorAll('.sm-lightbox-app');
+                rrLightbox.forEach(lightbox=>lightbox.remove());
+
+                const lightbox = document.createElement("div");
+                lightbox.classList.add("sm-lightbox-app");
+
+                lightbox.innerHTML = `
+                <div class="sm-backdrop-lightbox">
+                    <button class="sm-close-lightbox">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+                <div class="sm-lightbox-container">
+                    <img src="${img.src}">
+                </div>`;
+                
+                document.body.append(lightbox);
+
+                const backdrop  = lightbox.querySelector(".sm-backdrop-lightbox");
+                const close = lightbox.querySelector(".sm-close-lightbox");
+
+                backdrop.addEventListener("click", ()=>{
+                    lightbox.remove();
+                });
+
+                close.addEventListener("click", ()=>{
+                    lightbox.remove();
+                });
+            }
+            
+            const rrImages = document.querySelectorAll(`img[data-action="sm-show-lightbox"]`);
+            console.log(rrImages);
+            rrImages.forEach(img=>{
+                img.addEventListener("click", ()=>{
+                    lightbox(img);
+                });
+            });
         }
     }
 }
